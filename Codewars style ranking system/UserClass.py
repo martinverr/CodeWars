@@ -1,12 +1,3 @@
-# TODO:
-# MULTIPROMOTION:   fix case of multiple promotion, better if with new
-#                   methods. For example, in user.inc_progress() call a
-#                   self.promotion(self, points) that manage a promotion
-
-# NOTE: This class works for the basic 5 tests in codewars, but not for the
-#       final 200+ random test case (see TODO multipromotion)
-
-
 class User:
     # class properties by default
     rank = -8
@@ -19,6 +10,9 @@ class User:
             self.rank = rank
         if progress is not None and self.isValidProgress(progress):
             self.progress = progress
+
+    def __str__(self):
+        return f"Rank: {self.rank}\nProgress: {self.progress}"
 
     @classmethod
     def isValidRank(cls, rank):
@@ -63,23 +57,38 @@ class User:
         if dist > 0:
             return dist * dist * 10
 
+    def promotionRanks(self, ranks):
+        while ranks > 0:
+            nextrank = self.rank + 1
+            if self.isValidRank(nextrank):
+                self.setRank(nextrank)
+            else:  # possibile not valid nextrank
+                if self.rank == -1:
+                    self.setRank(nextrank + 1)
+                elif self.rank == 8:
+                    break
+                else:
+                    raise Exception("Undefined behaviour during promotion")
+            ranks -= 1
+
+    def promotionByProgress(self, progress):
+        advanceRanks = progress//100
+        progressSurplus = progress % 100
+        self.promotionRanks(advanceRanks)
+        if(self.rank == 8):
+            self.setProgress(0)
+            return
+        self.setProgress(progressSurplus)
+
     def inc_progress(self, rankActivity):
         if rankActivity is None or not self.isValidRank(rankActivity):
             raise Exception("Err: in inc_progress(self, rankActivity), "
                             "rankActivity is not a valid rank")
+        if self.rank == 8:
+            return
         totalProgress = self.progress + self.calculatePointsFrom(rankActivity)
 
         if totalProgress >= 100:  # promotion
-            if self.isValidRank(self.rank + 1):
-                self.rank += 1
-                self.progress = 0
-            else:
-                if self.rank == -1:
-                    self.rank += 2
-                    self.progress = 0
-                elif self.rank == 8:
-                    self.progress = 100
-                else:
-                    raise Exception("Undefined behaviour during promotion")
+            self.promotionByProgress(totalProgress)
         else:  # no promorion
             self.setProgress(totalProgress)
