@@ -27,4 +27,14 @@
       <li>If a user ranked -8 completes an activity ranked -4 they will receive 160 progress, resulting in the user being upgraded to rank -7 and having earned 60 progress towards their next rank</li>
       <li>If a user ranked -1 completes an activity ranked 1 they will receive 10 progress (remember, zero rank is ignored)</li>
    </ul>
-   
+<h3>Usage Examples:</h3>
+<pre>
+<code class="language-python"><span class="cm-variable">user</span> <span class="cm-operator">=</span> <span class="cm-variable">User</span>()
+<span class="cm-variable">user</span>.<span class="cm-property">rank</span> <span class="cm-comment"># =&gt; -8</span>
+<span class="cm-variable">user</span>.<span class="cm-property">progress</span> <span class="cm-comment"># =&gt; 0</span>
+<span class="cm-variable">user</span>.<span class="cm-property">inc_progress</span>(<span class="cm-operator">-</span><span class="cm-number">7</span>)
+<span class="cm-variable">user</span>.<span class="cm-property">progress</span> <span class="cm-comment"># =&gt; 10</span>
+<span class="cm-variable">user</span>.<span class="cm-property">inc_progress</span>(<span class="cm-operator">-</span><span class="cm-number">5</span>) <span class="cm-comment"># will add 90 progress</span>
+<span class="cm-variable">user</span>.<span class="cm-property">progress</span> <span class="cm-comment"># =&gt; 0 # progress is now zero</span>
+<span class="cm-variable">user</span>.<span class="cm-property">rank</span> <span class="cm-comment"># =&gt; -7 # rank was upgraded to -7</span></code>
+</pre>
