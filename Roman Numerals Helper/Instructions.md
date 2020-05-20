@@ -4,18 +4,7 @@
 <h2 id="examples">Examples</h2>
 <pre style="display: none;"><code class="language-javascript"><span class="cm-variable">RomanNumerals</span>.<span class="cm-property">toRoman</span>(<span class="cm-number">1000</span>); <span class="cm-comment">// should return 'M'</span>
 <span class="cm-variable">RomanNumerals</span>.<span class="cm-property">fromRoman</span>(<span class="cm-string">'M'</span>); <span class="cm-comment">// should return 1000</span></code></pre>
-<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">RomanNumerals</span><span class="cm-punctuation">.</span><span class="cm-property">toRoman</span><span class="cm-punctuation">(</span><span class="cm-number">1000</span><span class="cm-punctuation">)</span> <span class="cm-comment"># should return 'M'</span>
-<span class="cm-variable">RomanNumerals</span><span class="cm-punctuation">.</span><span class="cm-property">fromRoman</span><span class="cm-punctuation">(</span><span class="cm-string">'M'</span><span class="cm-punctuation">)</span> <span class="cm-comment"># should return 1000</span></code></pre>
-<pre style="display: none;"><code class="language-ruby"><span class="cm-tag">RomanNumerals</span><span class="cm-operator">.</span><span class="cm-property">to_roman</span>(<span class="cm-number">1000</span>) <span class="cm-comment"># should return 'M'</span>
-<span class="cm-tag">RomanNumerals</span><span class="cm-operator">.</span><span class="cm-property">from_roman</span>(<span class="cm-string">'M'</span>) <span class="cm-comment"># should return 1000</span></code></pre>
-<pre><code class="language-python"><span class="cm-variable">RomanNumerals</span>.<span class="cm-property">to_roman</span>(<span class="cm-number">1000</span>) <span class="cm-comment"># should return 'M'</span>
-<span class="cm-variable">RomanNumerals</span>.<span class="cm-property">from_roman</span>(<span class="cm-string">'M'</span>) <span class="cm-comment"># should return 1000</span></code></pre>
-<pre style="display: none;"><code class="language-c"><span class="cm-variable">to_roman</span>(<span class="cm-number">1000</span>) <span class="cm-comment">// should return 'M'</span>
-<span class="cm-variable">from_roman</span>(<span class="cm-string">'M'</span>) <span class="cm-comment">// should return 1000</span></code></pre>
-<pre style="display: none;"><code class="language-c++">RomanNumerals.to_roman(1000) // should return 'M'
-RomanNumerals.from_roman('M') // should return 1000</code></pre>
-<pre style="display: none;"><code class="language-julia"><span class="cm-variable">RomanNumerals</span><span class="cm-operator">.</span><span class="cm-builtin">toroman</span>(<span class="cm-number">1000</span>) <span class="cm-comment"># should return "M"</span>
-<span class="cm-variable">RomanNumerals</span><span class="cm-operator">.</span><span class="cm-builtin">fromroman</span>(<span class="cm-string">"M</span><span class="cm-string">"</span>) <span class="cm-comment"># should return 1000</span></code></pre>
+
 <h2>Help</h2>
 <pre>
 | Symbol    | Value |
